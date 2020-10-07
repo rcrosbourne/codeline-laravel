@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WeekendTrackerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WeekendTrackerController::class,'index'])->name('weekend-tracker.create');
+Route::post('/', [WeekendTrackerController::class,'store'])->name('weekend-tracker.store');
+
